@@ -26,6 +26,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
+// import { ThemeModal } from "../theme/ThemeModal";
 
 export function NavUser({ user }) {
   const { isMobile } = useSidebar();
@@ -85,10 +86,10 @@ export function NavUser({ user }) {
                 <CreditCard />
                 Thinking...
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              {/* <DropdownMenuItem>
                 <Bell />
-                Theme
-              </DropdownMenuItem>
+                <ThemeModal />
+              </DropdownMenuItem> */}
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>

@@ -1,7 +1,8 @@
 import { Navigate } from "react-router-dom";
 
 const RootRedirect = () => {
-  const user = false;
+  const user = true;
+  // const user = false;
   return user ? (
     <Navigate to="/main/dashboard" replace />
   ) : (

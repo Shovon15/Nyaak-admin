@@ -26,6 +26,8 @@ import { NavMain } from "./navMain";
 import { NavUser } from "./navUser";
 import AppLogo from "./AppLogo";
 import { sidebarLinks } from "@/routes/SideLinks";
+import { ThemeModal } from "../theme/ThemeModal";
+import { Button } from "../ui/button";
 
 // This is sample data.
 const userData = {
@@ -37,8 +39,10 @@ const userData = {
 };
 
 export function AppSidebar({ ...props }) {
+  // Method 2: Using a custom trigger with the ThemeModal component
+  const customTrigger = <Button variant="outline">Theme</Button>;
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar className="bg-red-500" collapsible="icon" {...props}>
       <SidebarHeader>
         <AppLogo />
       </SidebarHeader>
@@ -46,6 +50,7 @@ export function AppSidebar({ ...props }) {
         <NavMain items={sidebarLinks.navMain} />
       </SidebarContent>
       <SidebarFooter>
+        <ThemeModal trigger={customTrigger} />
         <NavUser user={userData.user} />
       </SidebarFooter>
       <SidebarRail />

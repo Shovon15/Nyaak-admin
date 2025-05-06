@@ -1,24 +1,25 @@
 import AppNavbar from "@/components/navbar/AppNavbar";
 import { AppSidebar } from "@/components/sidebar/AppSidebar";
+import { ThemeModal } from "@/components/theme/ThemeModal";
 
-import {
-  SidebarInset,
-  SidebarProvider,
- 
-} from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { ThemeProvider } from "@/context/ThemeContext";
+// import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 function MainScreens() {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <AppNavbar />
-        <div className="w-full h-full">
-          <Outlet />
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+    <ThemeProvider>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <AppNavbar />
+          <div className="w-full h-full">
+            <Outlet />
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </ThemeProvider>
   );
 }
 
