@@ -1,0 +1,15 @@
+name: Deploy Next App
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to server via SSH command
+        uses: echo "helloworld"
+        
