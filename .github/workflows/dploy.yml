@@ -1,4 +1,4 @@
-name: Deploy Next App
+name:Greeting
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - main 
 
 jobs:
-  build-and-deploy:
+  greet:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to server via SSH command
+      - name:"greet user"
         uses: echo "helloworld"
         
