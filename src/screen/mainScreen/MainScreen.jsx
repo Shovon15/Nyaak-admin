@@ -1,6 +1,5 @@
 import AppNavbar from "@/components/navbar/AppNavbar";
 import { AppSidebar } from "@/components/sidebar/AppSidebar";
-import { ThemeModal } from "@/components/theme/ThemeModal";
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/context/ThemeContext";
