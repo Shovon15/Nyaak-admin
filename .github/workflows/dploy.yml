@@ -1,9 +1,15 @@
-name:Greeting
-on:push
+name: Deploy Dist
+
+on: 
+  - push
+  - workflow_dispatch
+
 jobs:
-  greet:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name:"greet user"
-        run: echo "helloworld"
-        
+      - name: Get Code
+        run: |
+          echo "cloning repo"
+          echo "${{ tojson(github) }}"
+          git clone https://github.com/${{ github.repository }}.git
