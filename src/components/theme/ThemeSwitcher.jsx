@@ -1,7 +1,7 @@
 import { Moon, Sun, Laptop } from "lucide-react";
 import { Button } from "../ui/button";
 import clsx from "clsx";
-import { useTheme } from "@/context/themeContext";
+import { useTheme } from "@/context/ThemeContext";
 
 const themes = [
   { name: "zinc", label: "Zinc", color: "bg-zinc-800" },
