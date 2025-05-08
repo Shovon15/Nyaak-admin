@@ -11,8 +11,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/",
-  // base: "/nyaak-admin/",
+  // base: "/",
+  base: "/nyaak-admin/",
 });
 
 // import { defineConfig } from 'vite';
