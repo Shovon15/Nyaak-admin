@@ -11,8 +11,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: "./Nyaak-admin/",
 });
-
 
 // import { defineConfig } from 'vite';
 // import tailwindcss from '@tailwindcss/vite';
@@ -22,11 +22,6 @@ export default defineConfig({
 //     tailwindcss(),
 //   ],
 // });
-
-
-
-
-
 
 // initial code is this-------------------------------
 

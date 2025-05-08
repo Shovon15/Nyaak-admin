@@ -1,17 +1,24 @@
-name: Deploy Dist
+name: Deploy to GitHub Pages
 
-on: 
-  - push
-  - workflow_dispatch
+on:
+  push:
+    branches:
+      - main # or your default branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node 22
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -19,8 +26,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Bulid Project
+      - name: Build
         run: npm run build
 
-      - name: Deploy to server via SSH command
-        run: echo "Deploying to server"
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist" # adjust this path to match your build output directory
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
