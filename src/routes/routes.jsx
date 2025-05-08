@@ -11,10 +11,10 @@ const routes = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      {
-        index: true, // when visiting "/"
-        element: <RootRedirect />, // <-- handle logic inside component
-      },
+      // {
+      //   index: true, // when visiting "/"
+      //   element: <RootRedirect />, // <-- handle logic inside component
+      // },
       {
         path: "/main",
         element: <MainScreens />,

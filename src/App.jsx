@@ -43,9 +43,9 @@ const App = () => {
     // }`}
     >
       {/* {employee && <SideAndNavBar />} */}
-
-      <Outlet />
-      <Toaster position="top-center" reverseOrder={false} />
+      <p>hello!</p>
+      {/* <Outlet /> */}
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
 
       {/* {isLoading && <Loader />} */}
     </main>
